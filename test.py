@@ -27,7 +27,11 @@ if __name__ == "__main__":
     LSTM_SIZE = 128
     NUM_LAYERS = 1
     INIT_EPOCH = 5
+<<<<<<< HEAD
     MAX_EPOCH = 100
+=======
+    MAX_EPOCH = 30
+>>>>>>> a81da76631dc77ad9883b0423294968b1a0b173d
     VECTOR_SIZE = 6
 
     stock_1 = stock_data.stock(tickers, start_date, end_date)
@@ -46,7 +50,7 @@ if __name__ == "__main__":
     lstm_1.train(data_1.train_inputs_, data_1.train_targets_)
 
     # Test graph
-    lstm_1.test(data_1.test_inputs_, data_1.test_targets_)
+    lstm_1.test(data_1.test_inputs_, data_1.test_targets_, data_1.train_inputs_, data_1.train_targets_)
 
     print("End")
 
