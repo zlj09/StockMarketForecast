@@ -14,7 +14,7 @@ KEEP_PROB = 0.8
 LSTM_SIZE = 128
 NUM_LAYERS = 1
 INIT_EPOCH = 5
-MAX_EPOCH = 10
+MAX_EPOCH = 100
 VECTOR_SIZE = 6
 
 def chunks(l, n):
@@ -53,7 +53,7 @@ class LSTM:
             
             last = tf.gather(val, int(val.get_shape()[0]) - 1, name="last_lstm_output")
             
-            weight = tf.Variable(tf.truncated_normal([LSTM_SIZE, VECTOR_SIZE]))
+            weight = tf.Variable(tf.truncated_normal([LSTM_SIZE, 1]))
             bias = tf.Variable(tf.constant(0.01, shape=[VECTOR_SIZE]))
             self.prediction = tf.matmul(last, weight) + bias
             self.pred = self.prediction
